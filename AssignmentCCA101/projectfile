@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-void performanceReportPrint(double arrayCW, std::string name, int ID){
+void CWPerformanceReportPrint(double arrayCW, std::string name, int ID){
     std::cout<<"===================================================================================\n";
     std::cout<<"CCA101 STUDENT PERFORMANCE REPORT\n";
     std::cout<<"===================================================================================\n\n";
@@ -10,7 +10,49 @@ void performanceReportPrint(double arrayCW, std::string name, int ID){
     std::cout<<"-----------------------------------------------------------------------------------\n";
     std::cout<<"COURSEWORK PERFORMANCE\n";
     std::cout<<"-----------------------------------------------------------------------------------\n";
-    std::cout<<"CW1 - Test 1"<<setw()<<arrayCW[0];
+    std::cout<<"CW1 - Test 1                   : "<<arrayCW[0]<<"\n";
+    std::cout<<"CW2 - Timed Programming 1      : "<<arrayCW[1]<<"\n";
+    std::cout<<"CW3 - Test 2                   : "<<arrayCW[2]<<"\n";
+    std::cout<<"CW4 - Timed Programming 2      : "<<arrayCW[3]<<"\n";
+    std::cout<<"CW5 - Report-Based Programming : "<<arrayCW[4]<<"\n";
+    std::cout<<"CW6 - Weekly Programming       : "<<arrayCW[5]<<"\n\n";
+    std::cout<<"Coursework Contribution (50%)  : "<<arrayCW[6]<<"\n\n";
+    std::cout<<"-----------------------------------------------------------------------------------\n";
+    std::cout<<"FINAL EXAMINATION PREDICTION\n";
+    std::cout<<"-----------------------------------------------------------------------------------\n";
+    std::cout<<"Target Grade\tTarget Overall Mark\tRequired Final Exam Mark\n";
+    std::cout<<"-------------------------------------------------------------------\n";
+    std::cout<<"A"<<setw()<<80<<setw()<<"\n";
+    std::cout<<"A-"<<setw()<<70<<setw()<<"\n";
+    std::cout<<"B+"<<setw()<<64<<setw()<<"\n";
+    std::cout<<"B"<<setw()<<58<<setw()<<"\n";
+    std::cout<<"B-"<<setw()<<52<<setw()<<"\n";
+    std::cout<<"C+"<<setw()<<46<<setw()<<"\n";
+    std::cout<<"C"<<setw()<<40<<setw()<<"\n";
+    std::cout<<"-----------------------------------------------------------------------------------\n";
+    std::cout<<"PERFORMANCE STATUS\n"
+    std::cout<<"-----------------------------------------------------------------------------------\n";
+    std::cout<<"Current Standing : "<<standing<<"\n";
+    std::cout<<"Risk Category    : "<<risk<<"\n";
+    std::cout<<"Remarks:\n";
+    if(arrayCW[6]>placeholder){
+        std::cout<<"You are performing well in the coursework component. Securing a pass
+or a grade C is already guaranteed based on your current coursework
+performance.\n";
+    }
+    std::cout<<"===================================================================================\n";  
+}
+void reportSummary(double arrayCW, int ID, std::string name){
+    std::cout<<"=========================================================\n
+CCA101 FINAL EXAMINATION PREDICTION REPORT\n
+=========================================================\n";
+    std::cout<<"ID Name CW Mark A A- B+ B B- C+ C\n";
+    std::cout<<"---------------------------------------------------------------------------------------------------\n";
+    for(int i=0; i<=sizeof(arrayCW)/sizeof(arrayCW[0]);i++){
+        std::cout<<ID<<name<<arrayCW[6]<</*calcArray<<*/"\n";
+    }
+    
+
 }
     
 
