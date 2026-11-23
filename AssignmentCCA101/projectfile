@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+
+void performanceReportPrint(double arrayCW, std::string name, int ID){
+    std::cout<<"===================================================================================\n";
+    std::cout<<"CCA101 STUDENT PERFORMANCE REPORT\n";
+    std::cout<<"===================================================================================\n\n";
+    std::cout<<"Student ID  : "<<ID<<"\n";
+    std::cout<<"Student Name:"<<name<<"\n\n";
+    std::cout<<"-----------------------------------------------------------------------------------\n";
+    std::cout<<"COURSEWORK PERFORMANCE\n";
+    std::cout<<"-----------------------------------------------------------------------------------\n";
+    std::cout<<"CW1 - Test 1"<<setw()<<arrayCW[0];
+}
+    
+
+int main (){
+    //Initialize file objects
+    std::ofstream outfile;
+    std::ifstream infile;
+    //Get the files ready
+    outfile.open("prediction_report.txt");
+    outfile.open("studentnameheresummary.txt")
+    infile.open("student.txt");
+    return 0;
+}

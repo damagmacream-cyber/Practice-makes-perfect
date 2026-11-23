@@ -4,5 +4,6 @@
     "telemetry.editStats.enabled": false,
     "ipynb.pasteImagesAsAttachments.enabled": false,
     "ipynb.experimental.serialization": false,
-    "editor.cursorBlinking": "blink"
+    "editor.cursorBlinking": "blink",
+    "C_Cpp.errorSquiggles": "disabled"
 }
