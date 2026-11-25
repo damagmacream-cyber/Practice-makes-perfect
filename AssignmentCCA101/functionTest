@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+void printHello(string name){
+    std::cout<<"Hello "<<name<<"\n";
+}
+int calcSalary(int hrs, int payperhr){
+    return hrs*payperhr;
+}
+int main (){
+    std::string name;
+    std::cout<<"Enter your name: ";
+    std::cin>>name;
+
+    printHello(name);
+
+    int hour, hourlypay;
+    std::cout<<"Enter two num: ";
+    std::cin>>hour>>hourlypay;
+
+    int totalpay = calcSalary(hour, hourlypay);
+
+
+
+    return 0;
+}
