@@ -1,0 +1,48 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+std::string filename()
+{
+    std::string filenama;
+    std::cout<<"Enter file name before the dot: ";
+    std::cin>>filenama;
+    return filenama;
+}
+
+
+int main ()
+{
+    std::ofstream ofile;
+    std::ifstream ifile;
+
+    std::string filename1 = filename();
+    std::string filename2 = filename();
+
+    ofile.open(filename1.c_str());
+    ifile.open(filename2.c_str());
+
+    if(!ifile)
+    {
+        std::cout<<"File open error";
+    }
+    else
+    {
+        while(ifile>>number)
+        {
+            std::cout<<number<<" ";
+        }
+    }
+        
+    ofile.close();
+    ifile.close();
+    
+    
+    
+    
+    
+    
+    
+    
+    return 0;
+}
