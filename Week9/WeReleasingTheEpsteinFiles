@@ -22,6 +22,8 @@ int main ()
     ofile.open(filename1.c_str());
     ifile.open(filename2.c_str());
 
+    int number;
+
     if(!ifile)
     {
         std::cout<<"File open error";
