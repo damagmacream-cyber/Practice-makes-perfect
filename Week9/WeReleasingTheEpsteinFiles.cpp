@@ -2,12 +2,23 @@
 #include <fstream>
 #include <string>
 
-std::string filename()
+// std::string filename()
+// {
+//     std::string filenama;
+//     std::cout<<"Enter file name before the dot: ";
+//     std::cin>>filenama;
+//     return filenama;
+// }
+std::string askUserStr(std::string string)
 {
-    std::string filenama;
-    std::cout<<"Enter file name before the dot: ";
-    std::cin>>filenama;
-    return filenama;
+    std::string input;
+    std::cout<<"Please enter "<<string<<": ";
+    std::getline(std::cin, input);
+    return input;
+}
+int askUserInt(std::string string)
+{
+    return std::stoi(askUserStr(string));
 }
 
 
@@ -16,34 +27,35 @@ int main ()
     std::ofstream ofile;
     std::ifstream ifile;
 
-    std::string filename1 = filename();
-    std::string filename2 = filename();
+    std::string outputFileName = askUserStr("output file name");
+    std::string inputFileName = askUserStr("input file name");
 
-    ofile.open(filename1.c_str());
-    ifile.open(filename2.c_str());
+    ofile.open(outputFileName.c_str());
+    ifile.open(inputFileName.c_str());
 
-    int number;
+    // int number;
 
     if(!ifile)
     {
         std::cout<<"File open error";
     }
-    else
+    
+    std::string name = askUserStr("name");
+    int age = askUserInt("age");
+
+    ofile << "Name: "<<name<<"\n";
+    ofile << "Age : "<<age<<"\n";
+
+    std::string line;
+
+    while(std::getline(ifile, line))
     {
-        while(ifile>>number)
-        {
-            std::cout<<number<<" ";
-        }
+        std::cout<<line<<"\n";
     }
+
         
     ofile.close();
     ifile.close();
-    
-    
-    
-    
-    
-    
     
     
     return 0;
