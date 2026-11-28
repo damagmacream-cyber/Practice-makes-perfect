@@ -108,18 +108,42 @@ int main ()
     Given a file input.txt containing integers, write a program that copies only even
     numbers into even.txt.
     */
+   // A4
    ifile.open(intlistfilename.c_str());
    ofile.open("even.txt");
+
    if(!ifile)
     {
         std::cout<<"File open error";
         return 1;
     }
-    int number = 0;
+
+    int number = 0, j = 0;
     while(ifile>>number)
     {
-        std::cout<<line<<"\n";
+        if(number%2==0)
+        {
+            ofile<<number<<" ";
+        }
+        if(j%5 == 0)
+        {
+            ofile<<"\n";
+        }
+        j++;
     }
+
+    ifile.close();
+    ofile.close();
+
+    /*
+    Q5
+    Write a program that reads integers from data.txt and counts how many numbers
+    are in the file.
+    */
+    //A5
+
+    
+
     
     return 0;
 }
