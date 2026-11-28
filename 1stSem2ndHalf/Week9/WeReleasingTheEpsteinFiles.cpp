@@ -9,6 +9,8 @@
 //     std::cin>>filenama;
 //     return filenama;
 // }
+
+//I wanted to ask for input but lazy to write code
 std::string askUserStr(std::string string)
 {
     std::string input;
@@ -17,6 +19,7 @@ std::string askUserStr(std::string string)
     return input;
 }
 
+//some sort of buffer error with int so getline eats it up
 int askUserInt(std::string string)
 {   
     int input = 0;
@@ -34,7 +37,7 @@ char askUserChar(std::string string)
     std::cout<<"Please enter "<<string<<": ";
     std::cin>>input;
     std::getline(std::cin, junk);
-    return input;
+    return std::tolower(input);
 }
 
 int main ()
@@ -142,8 +145,45 @@ int main ()
     */
     //A5
 
-    
+    ifile.open("data.txt");
+    int numCount = 0;
+    while(ifile >> number)
+    {
+        numCount++;
+    }
+    std::cout<<"The number of integers in data.txt is: "<<numCount<<std::endl;
 
-    
+    ifile.close();
+
+    /*
+    Q6
+    Write a C++ program that reads integers from values.txt and finds the largest
+    number.
+    */
+    //A6
+    ifile.open("values.txt");
+    number = 0;
+    int max = -999;
+    while(ifile>>number)
+    {
+        if(number>max)
+        {
+            max = number;
+        }
+    }
+    std::cout<<"The largest number in values.txt is: "<<max<<std::endl;
+    ifile.close();
+    /*
+    Q7
+    Write a program that asks the user to enter numbers and stores them in
+    numbers2.txt. Stop when the user enters a negative number.
+    */
+    //A7
+    ofile.open("numbers2.txt");
+    number = askUserInt("number");
+    while(number>=0)
+    {
+        ofile << number;
+    }
     return 0;
 }
