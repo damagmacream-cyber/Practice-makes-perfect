@@ -184,6 +184,61 @@ int main ()
     while(number>=0)
     {
         ofile << number;
+        number = askUserInt("number");
     }
+    ofile.close();
+
+    /*
+    Q8
+    Write a program that copies the entire content of source.txt to copy.txt
+    */
+    //A8
+    ifile.open("source.txt");
+    ofile.open("copy.txt");
+    while(std::getline(ifile, line))
+    {
+        ofile<<line<<std::endl;
+    }
+    ifile.close();
+    ofile.close();
+
+    /*
+    Q9
+    A file scores.txt contains students’ scores (integers). Write a program to calculate
+    and display the average score.
+    */
+    //A9
+
+    ifile.open("scores.txt");
+    int total = 0, count = 0;
+    while(ifile>>number)
+    {
+        total += number;
+        count++;
+    }
+    int avg = total/count;
+    std::cout<<"The average is: "<<avg<<std::endl;
+    ifile.close();
+    /*
+    Q10
+    Write a program that asks the user for a filename and then displays its contents on
+    the screen.
+    (Use open() and check for failure.)
+    */
+    std::string filename = askUserStr("file name");
+    ifile.open(filename.c_str());
+    if(ifile)
+    {
+        while(std::getline(ifile, line))
+        {
+           std::cout<<line<<std::endl;
+        }
+    }
+    else
+    {
+        std::cout<<"File open error";
+    }
+    
+    ofile.close();
     return 0;
 }
